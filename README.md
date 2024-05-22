@@ -1,4 +1,4 @@
-Пет проет для демонтрации знаний по JS, TS, REACT с использованием сборщика VITE
+Пет проект для демонтрации знаний по JS, TS, REACT с использованием сборщика VITE
 
 https://github.com/zagorky/JS_TS_REACT_Project.git
 

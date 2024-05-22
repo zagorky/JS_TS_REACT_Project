@@ -1,2 +1,2 @@
 # JS_TS_REACT_Project
-Пет проет для демонтрации знаний по HTML, SCSS, JS, TS, REACT
+Пет проект для демонтрации знаний по JS, TS, REACT

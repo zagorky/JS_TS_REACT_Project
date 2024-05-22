@@ -1,9 +1,12 @@
 import "./App.css";
+import AdviceSection from "./components/AdviceSection/AdviceSection";
 
 function App() {
   return (
     <>
-      <div></div>
+      <div>
+        <AdviceSection />
+      </div>
     </>
   );
 }

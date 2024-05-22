@@ -1,0 +1,15 @@
+html {
+  text-align: center;
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  background-color: hsl(218, 23%, 16%);
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: auto;
+}

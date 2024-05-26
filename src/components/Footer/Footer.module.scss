@@ -1,0 +1,32 @@
+footer {
+    background: rgb(238,174,202);
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    font-family: "Involve Regular";
+
+
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer nav ul {
+    list-style-type: none;
+}
+
+footer nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer nav ul li a {
+    color: #50400e;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    &:hover{
+        color: #231b06;
+    }
+
+}
+
+
+

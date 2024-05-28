@@ -5,11 +5,12 @@
 }
 
 header {
-    background: rgb(238,174,202);
-    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    font-family: "GellaDisplay";
-    color: #50400e;
+
+    background-color: #90A070;
+    font-family: "Rubik Mono One", monospace;
+    color: #f6c4d0;
     padding: 20px 0;
+
 }
 
 header .container {
@@ -21,6 +22,28 @@ header .container {
 
 header h1 {
     font-size: 32px;
+    &:hover{
+        transition: 1s;
+        transform: scale(1.2);
+        color: #fbe0e6;
+   }
+
 }
 
+$media: screen;
+$feature: -webkit-min-device-pixel-ratio;
+$value: 1.5;
+
+@media #{$media} and ($feature: $value) {
+  header h1 {
+    font-size: 24px;
+    padding: 20px 0;
+    &:hover{
+        transition: 1s;
+        transform: scale(1.1);
+        color: #fbe0e6;
+    }
+
+  }
+}
 

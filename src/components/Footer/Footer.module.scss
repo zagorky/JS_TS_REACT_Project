@@ -1,7 +1,11 @@
 footer {
-    background: rgb(238,174,202);
-    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    font-family: "Involve Regular";
+    // background: rgb(238,174,202);
+    // background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    // font-family: "Involve Regular";
+
+    background-color: #90A070;
+    font-family: "Rubik Mono One", monospace;
+    color: #E4BBC5;
 
 
     padding: 20px 0;
@@ -18,12 +22,12 @@ footer nav ul li {
 }
 
 footer nav ul li a {
-    color: #50400e;
+    color: #f6c4d0;
     text-decoration: none;
     font-size: 20px;
     font-weight: 500;
     &:hover{
-        color: #231b06;
+        color: #f9e0e6;
     }
 
 }

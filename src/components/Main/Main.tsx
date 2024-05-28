@@ -1,3 +1,4 @@
+import RandomAnime from '../Random/RandomAnime';
 import classes from './Main.module.scss'
 
 function Main () {
@@ -5,10 +6,7 @@ function Main () {
         <main>
         <div className={classes.container}>
             <div className={classes.animeCard}>
-                <img src="anime.jpg" alt="Anime Poster" />
-                <h2>Название аниме</h2>
-                <p>Краткое описание аниме</p>
-                <button className={classes.btn}>Следующее</button>
+                <RandomAnime />
             </div>
         </div>
     </main>

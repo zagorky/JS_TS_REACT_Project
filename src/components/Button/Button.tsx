@@ -8,6 +8,7 @@ let randomItem = array[Math.floor(Math.random() * array.length)];*/}
 
   return (
     <div className={classes.ButtonSection}>
+                <button className={classes.btn}>Следующее</button>
 
       
     </div>

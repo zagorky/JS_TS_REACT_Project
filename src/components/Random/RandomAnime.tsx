@@ -1,45 +1,66 @@
-import { useState } from 'react';
-import axios from 'axios';
-import classes from './RandomAnime.module.scss'
+import { useQuery } from "@tanstack/react-query";
+import classes from "./RandomAnime.module.scss";
+import { FC } from "react";
+import { getRandomAnime } from "../service/Api";
 
-const RandomAnime = () => {
-  const [anime, setAnime] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+const RandomAnime: FC = () => {
+  const { data, isError, isLoading, refetch, error } = useQuery({
+    queryKey: ["randomAnime"],
+    queryFn: getRandomAnime,
+    refetchOnWindowFocus: false,
+  });
 
-  const getRandomAnime = async () => {
-    setLoading(true);
-    setError(null);
+  if (isLoading) {
+    return <h1>Загрузка...</h1>;
+  }
 
-    try {
-      // Get a random anime ID (This is a simplistic approach)
-      const randomId = Math.floor(Math.random() * 10000) + 1;
-
-      const response = await axios.get(`https://api.jikan.moe/v4/anime/${randomId}`);
-      setAnime(response.data.data);
-    } catch (err) {
-      setError('Could not fetch anime. Try again!');
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (isError) {
+    return (
+      <div>
+        <h2>Ошибка при загрузке данных</h2>
+        <p>{(error as Error).message}</p>
+        <button className={classes.btn} onClick={() => refetch()}>
+          Искать аниме
+        </button>
+      </div>
+    );
+  }
 
   return (
-    <div>   
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {anime && (
-        <div>
-          <h2>{anime.title}</h2>
-          <img src={anime.images.jpg.image_url} alt={anime.title} />
-          <p><strong>Жанры:</strong> {anime.genres.map(genre => genre.name).join(', ')}</p>
-          <p>{anime.synopsis}</p>
-        </div>
-      )}
-            <button className={classes.btn} onClick={getRandomAnime}>Искать аниме</button>
-
+    <div>
+      <div>
+        {data && (
+          <div>
+            <h2>{data.russian}</h2>
+            <img
+              src={
+                `https://shikimori.one${data.image.original}` ||
+                "Изображение отсутствует"
+              }
+              alt={data.name}
+            />
+            <p>
+              <strong>Жанры:</strong>
+              {data.genres.map((genre: any) => genre.name).join(", ")}
+            </p>
+            <p>
+              <strong>Описание:</strong>
+              {data.description || "Описание отсутствует"}
+            </p>
+            {data.videos.length > 0 ? (
+              <video width="320" height="240" controls>
+                <source src={data.videos[0].url} type="video/mp4" />
+              </video>
+            ) : (
+              <p>Видео отсутствует</p>
+            )}
+          </div>
+        )}
+      </div>
+      <button className={classes.btn} onClick={() => refetch()}>
+        Искать аниме
+      </button>
     </div>
   );
 };
-
 export default RandomAnime;

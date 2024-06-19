@@ -1,23 +1,22 @@
-.ButtonSection{
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    background-color:  hsl(150, 100%, 66%);
-    position: absolute;
-    top: 340px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+.ButtonSection {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  background-color: hsl(150, 100%, 66%);
+  position: absolute;
+  top: 340px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 
-   .button{
+  .button {
     display: block;
     cursor: pointer;
-
-   }
+  }
 }

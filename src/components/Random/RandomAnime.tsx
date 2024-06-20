@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import classes from "./RandomAnime.module.scss";
 import { FC } from "react";
 import { getRandomAnime } from "../service/Api";
+import Button from "../Button/Button";
 
 const RandomAnime: FC = () => {
   const { data, isError, isLoading, refetch, error } = useQuery({
@@ -19,9 +19,7 @@ const RandomAnime: FC = () => {
       <div>
         <h2>Ошибка при загрузке данных</h2>
         <p>{(error as Error).message}</p>
-        <button className={classes.btn} onClick={() => refetch()}>
-          Искать аниме
-        </button>
+        <Button onClick={() => refetch()}> Искать аниме</Button>
       </div>
     );
   }
@@ -47,19 +45,10 @@ const RandomAnime: FC = () => {
               <strong>Описание:</strong>
               {data.description || "Описание отсутствует"}
             </p>
-            {data.videos.length > 0 ? (
-              <video width="320" height="240" controls>
-                <source src={data.videos[0].url} type="video/mp4" />
-              </video>
-            ) : (
-              <p>Видео отсутствует</p>
-            )}
           </div>
         )}
       </div>
-      <button className={classes.btn} onClick={() => refetch()}>
-        Искать аниме
-      </button>
+      <Button onClick={() => refetch()}> Искать аниме</Button>
     </div>
   );
 };

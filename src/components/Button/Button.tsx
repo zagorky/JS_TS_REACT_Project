@@ -1,16 +1,21 @@
+import { FC } from "react";
 import classes from "./Button.module.scss";
 
-export default function Button() {
-   {/* повесить на баттон онклик, который 
-      будет рендерить страницу заново, получая 
-      с сервера рандомный индекс массива
-let randomItem = array[Math.floor(Math.random() * array.length)];*/}
+interface ButtonProps {
+  children?: React.ReactNode;
+  onClick?: () => void;
+}
+
+const Button: FC<ButtonProps> = (props) => {
+  const { children, onClick } = props;
 
   return (
     <div className={classes.ButtonSection}>
-                <button className={classes.btn}>Следующее</button>
-
-      
+      <button onClick={onClick} className={classes.btn}>
+        {children}
+      </button>
     </div>
   );
-}
+};
+
+export default Button;

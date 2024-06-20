@@ -1,22 +1,14 @@
-.ButtonSection {
-  border-radius: 50%;
-  height: 60px;
-  width: 60px;
-  background-color: hsl(150, 100%, 66%);
-  position: absolute;
-  top: 340px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-
-  .button {
-    display: block;
-    cursor: pointer;
+.btn {
+  background-color: #be377166;
+  border-radius: 10px;
+  color: #312f2f;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  &:hover {
+    background-color: #be3771a5;
+    transition: all 1s ease;
   }
 }

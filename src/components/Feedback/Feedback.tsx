@@ -31,18 +31,18 @@ const Feedback = () => {
   return (
     <form ref={formRef} className={classes.form} onSubmit={handleSubmit}>
       <p>Ваше имя</p>
-      <p className={classes.nameInput}>
-        <input type="text" />
+      <p className={classes.p}>
+        <input className={classes.input} type="text" />
       </p>
       <p>Ваша электронная почта</p>
-      <p className={classes.nameInput}>
-        <input type="text" />
+      <p className={classes.p}>
+        <input className={classes.input} type="text" />
       </p>
-      <p className={classes.questionInput}>
+      <p className={classes.p}>
         <p>
           <label htmlFor="story">Ваш вопрос</label>
         </p>
-        <textarea id="story" name="story"></textarea>
+        <textarea className={classes.input} id="story" name="story"></textarea>
       </p>
       <Button>Отправить</Button>
     </form>

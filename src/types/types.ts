@@ -4,4 +4,7 @@ export interface Question {
   email: string;
   question: string;
 }
-export type QuestionRequest = Omit<Question, "id" | "count">;
+export type QuestionRequest = Omit<
+  Question,
+  "id" | "name" | "email" | "question"
+>;

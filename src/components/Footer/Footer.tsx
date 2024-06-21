@@ -1,19 +1,21 @@
+import { useState } from "react";
 import Feedback from "../Feedback/Feedback";
 import classes from "./Footer.module.scss";
 
 function Footer() {
+  const [showFeedback, setShowFeedback] = useState(false);
+
+  const FeedbackChanger = () => {
+    setShowFeedback((help) => !help);
+  };
+
   return (
-    <footer>
+    <footer className={classes.footer}>
       <div className={classes.container}>
-        <nav>
-          <ul>
-            <li>{/* <a href="#">О нас</a> */}</li>
-            <li>
-              <a href="#">Помощь</a>
-              <Feedback />
-            </li>
-          </ul>
-        </nav>
+        <button className={classes.submit} onClick={FeedbackChanger}>
+          Помощь
+        </button>
+        {showFeedback && <Feedback />}
       </div>
     </footer>
   );

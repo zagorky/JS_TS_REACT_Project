@@ -1,8 +1,21 @@
 import axios from "axios";
+import { QuestionRequest } from "../../../types/types";
 
 const animeApi = "https://shikimori.one/api";
 
-export const getRandomAnime = async () => {
+export interface Anime {
+  id: number;
+  russian: string;
+  image: {
+    original: string;
+  };
+  name: string;
+  genres: [string];
+
+  description: string;
+}
+
+export const getRandomAnime = async (): Promise<Anime> => {
   const random = Math.floor(Math.random() * 3000);
 
   try {
@@ -17,4 +30,13 @@ export const getRandomAnime = async () => {
     console.error("Ошибка", error);
     throw error;
   }
+};
+
+export const api = axios.create({
+  baseURL: "http://localhost:3000/",
+});
+
+export const getQuestion = async (question: QuestionRequest) => {
+  const { data } = await api.post("/questions", question);
+  return data;
 };

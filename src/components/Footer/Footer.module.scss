@@ -1,36 +1,23 @@
-footer {
-    // background: rgb(238,174,202);
-    // background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-    // font-family: "Involve Regular";
-
-    background-color: #90A070;
-    font-family: "Rubik Mono One", monospace;
-    color: #E4BBC5;
-
-
-    padding: 20px 0;
-    text-align: center;
+.footer {
+  background-color: #90a070;
+  font-family: "Rubik Mono One", monospace;
+  color: #e4bbc5;
+  padding: 20px 0;
+  text-align: center;
+  height: auto;
 }
 
-footer nav ul {
-    list-style-type: none;
+.submit {
+  display: inline-block;
+  margin-right: 20px;
+  color: #f6c4d0;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  background-color: #90a07000;
+  cursor: pointer;
+  &:hover {
+    color: #f9e0e6;
+  }
 }
-
-footer nav ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-footer nav ul li a {
-    color: #f6c4d0;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 500;
-    &:hover{
-        color: #f9e0e6;
-    }
-
-}
-
-
-

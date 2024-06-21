@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { FC } from "react";
-import { getRandomAnime } from "../service/Api";
+import { Anime, getRandomAnime } from "../service/api/Api";
 import Button from "../Button/Button";
 
 const RandomAnime: FC = () => {
-  const { data, isError, isLoading, refetch, error } = useQuery({
+  const { data, isError, isLoading, refetch, error } = useQuery<Anime, Error>({
     queryKey: ["randomAnime"],
     queryFn: getRandomAnime,
     refetchOnWindowFocus: false,
@@ -39,7 +39,7 @@ const RandomAnime: FC = () => {
             />
             <p>
               <strong>Жанры:</strong>
-              {data.genres.map((genre: any) => genre.name).join(", ")}
+              {data.genres.map((genre) => genre.name).join(", ")}
             </p>
             <p>
               <strong>Описание:</strong>

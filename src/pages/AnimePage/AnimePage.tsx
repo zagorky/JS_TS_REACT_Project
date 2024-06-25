@@ -1,7 +1,11 @@
-import React from "react";
+import { AnimeItem } from "../../components/componentList";
 
 const AnimePage = () => {
-  return <div></div>;
+  return (
+    <div>
+      <AnimeItem />
+    </div>
+  );
 };
 
 export default AnimePage;

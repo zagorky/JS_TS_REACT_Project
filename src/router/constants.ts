@@ -1,6 +1,5 @@
 export enum RouteVar {
   home = "/",
-  //   catalog = "/catalog",
-  animeDetails = "/catalog/:id",
+  animeDetails = "/animes/:id",
   feedback = "/feedback",
 }

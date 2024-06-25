@@ -3,9 +3,13 @@
   margin: 0;
   padding: 0;
 }
+a {
+  text-decoration: none;
+}
 
 body {
   background-color: #ffffff;
+  height: 100%;
 }
 
 @font-face {

@@ -1,7 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import { RouteVar } from "./constants";
 import PublicLayout from "../layout/PublicLayout";
-import { ErrorPage, HomePage } from "../pages/pagesList";
+import {
+  AnimePage,
+  ErrorPage,
+  FeedbackPage,
+  HomePage,
+} from "../pages/pagesList";
 
 export const router = createBrowserRouter([
   {
@@ -13,18 +18,14 @@ export const router = createBrowserRouter([
         index: true,
         element: <HomePage />,
       },
-      //   {
-      //     path: RouteVar.catalog,
-      //     element: <CatalogPage />,
-      //   },
-      //   {
-      //     path: RouteVar.addItem,
-      //     element: <CreateItemPage />,
-      //   },
-      //   {
-      //     path: RouteVar.itemDetails,
-      //     element: <ProductPage />,
-      //   },
+      {
+        path: RouteVar.feedback,
+        element: <FeedbackPage />,
+      },
+      {
+        path: RouteVar.animeDetails,
+        element: <AnimePage />,
+      },
     ],
   },
 ]);

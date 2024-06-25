@@ -1,21 +1,17 @@
-import { useState } from "react";
-import Feedback from "../Feedback/Feedback";
+import { NavLink } from "react-router-dom";
+import { RouteVar } from "../../router/constants";
 import classes from "./Footer.module.scss";
 
 function Footer() {
-  const [showFeedback, setShowFeedback] = useState(false);
-
-  const FeedbackChanger = () => {
-    setShowFeedback((help) => !help);
-  };
-
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
-        <button className={classes.submit} onClick={FeedbackChanger}>
+        <NavLink className={classes.submit} to={RouteVar.feedback} end>
           Помощь
-        </button>
-        {showFeedback && <Feedback />}
+        </NavLink>
+        <NavLink className={classes.submit} to={RouteVar.home} end>
+          Главная
+        </NavLink>
       </div>
     </footer>
   );

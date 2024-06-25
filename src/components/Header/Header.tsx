@@ -1,15 +1,16 @@
-import classes from './Header.module.scss'
+import { NavLink } from "react-router-dom";
+import classes from "./Header.module.scss";
+import { RouteVar } from "../../router/constants";
 
 const Header = () => {
   return (
     <header>
       <div className={classes.container}>
-        <h1>Anime Randomizer</h1>
-
+        <NavLink to={RouteVar.home}>
+          <h1>Anime Randomizer</h1>
+        </NavLink>
       </div>
     </header>
-
-
   );
 };
 

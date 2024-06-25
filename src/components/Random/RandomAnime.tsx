@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
 import { FC } from "react";
-import { Anime, getRandomAnime } from "../service/api/Api";
+import { Anime, getRandomAnime } from "../../service/api/Api";
 import Button from "../Button/Button";
+import { RouteVar } from "../../router/constants";
+import { Link } from "react-router-dom";
 
 const RandomAnime: FC = () => {
   const { data, isError, isLoading, refetch, error } = useQuery<Anime, Error>({
@@ -29,7 +31,9 @@ const RandomAnime: FC = () => {
       <div>
         {data && (
           <div>
-            <h2>{data.russian}</h2>
+            <Link to={RouteVar.animeDetails}>
+              <h2>{data.russian}</h2>
+            </Link>
             <img
               src={
                 `https://shikimori.one${data.image.original}` ||

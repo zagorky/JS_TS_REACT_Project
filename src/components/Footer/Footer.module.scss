@@ -3,12 +3,19 @@
   font-family: "Rubik Mono One", monospace;
   color: #e4bbc5;
   padding: 20px 0;
-  text-align: center;
   height: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  // margin-top: auto;
 }
 
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
 .submit {
-  display: inline-block;
   color: #f6c4d0;
   text-decoration: none;
   font-size: 20px;

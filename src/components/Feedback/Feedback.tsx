@@ -2,8 +2,8 @@ import { useRef } from "react";
 import classes from "./Feedback.module.scss";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { getQuestion } from "../../service/api/Api";
+import { Button } from "../componentList";
 import { QuestionRequest } from "../../types/types";
-import Button from "../Button/Button";
 
 const Feedback = () => {
   const queryClient = useQueryClient();
@@ -21,9 +21,9 @@ const Feedback = () => {
     event.preventDefault();
     const dataObj = Object.fromEntries(new FormData(event.currentTarget));
     const addedData = {
-      name: dataObj.name,
-      email: dataObj.email,
-      question: dataObj.question,
+      name: dataObj.name as string,
+      email: dataObj.email as string,
+      question: dataObj.question as string,
     };
     mutator.mutate(addedData as QuestionRequest);
   };

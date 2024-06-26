@@ -1,10 +1,10 @@
-export interface Question {
+export interface QuestionType {
   id: number;
   name: string;
   email: string;
   question: string;
 }
 export type QuestionRequest = Omit<
-  Question,
+  QuestionType,
   "id" | "name" | "email" | "question"
 >;

@@ -3,13 +3,14 @@ import { Anime, getAnimeById } from "../../service/api/Api";
 import { RouteVar } from "../../router/constants";
 import { Link, useParams } from "react-router-dom";
 import { FC } from "react";
+import classes from "./AnimeItem.module.scss";
 
 const AnimeItem: FC<Anime> = () => {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
 
   const { data, isError, isLoading, error } = useQuery<Anime, Error>({
-    queryKey: ["randomAnime", id],
-    queryFn: () => getAnimeById(Number(id)),
+    queryKey: ["anime", id],
+    queryFn: () => getAnimeById(id),
     refetchOnWindowFocus: false,
   });
 
@@ -19,7 +20,7 @@ const AnimeItem: FC<Anime> = () => {
 
   if (isError || !data) {
     return (
-      <div>
+      <div className={classes.container}>
         <h2>Ошибка при загрузке данных</h2>
         <p>{(error as Error).message}</p>
         <Link to={RouteVar.home}>Назад на главную</Link>
@@ -27,9 +28,9 @@ const AnimeItem: FC<Anime> = () => {
     );
   }
   return (
-    <div>
+    <div className={classes.container}>
       {data && (
-        <div>
+        <div className={classes.animeCard}>
           <h2>Информация об аниме "{data.russian}"</h2>
 
           <img
@@ -45,13 +46,9 @@ const AnimeItem: FC<Anime> = () => {
           </p>
           <p>
             <strong>Рейтинг:</strong>
-            {data.score || "Рейтинг отсутствует"}
+            {`${data.score} из 10` || "Рейтинг отсутствует"}
           </p>
-          <p>
-            <strong>Похожие:</strong>
-            {data.synonyms?.map((synonym) => synonym.name.join(", ")) ||
-              "Информация отсутствует"}
-          </p>
+
           <p>
             <strong>Статус:</strong>
             {data.status || "Информация отсутствует"}
@@ -66,7 +63,19 @@ const AnimeItem: FC<Anime> = () => {
           </p>
           <p>
             <strong>Трейлер:</strong>
-            {data.videos?.[0]?.url || "Информация отсутствует"}
+            <a
+              className="animeLink"
+              target="blank"
+              href={
+                data.videos && data.videos[0]
+                  ? data.videos[0].url
+                  : "Информация отсутствует"
+              }
+            >
+              {data.videos && data.videos[0]
+                ? data.videos[0].url
+                : "Информация отсутствует"}
+            </a>
           </p>
         </div>
       )}

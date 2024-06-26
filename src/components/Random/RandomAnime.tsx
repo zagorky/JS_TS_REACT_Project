@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { FC } from "react";
 import { Anime, getRandomAnime } from "../../service/api/Api";
 import Button from "../Button/Button";
-import { RouteVar } from "../../router/constants";
+// import { RouteVar } from "../../router/constants";
 import { Link } from "react-router-dom";
 
 const RandomAnime: FC = () => {
@@ -31,9 +31,7 @@ const RandomAnime: FC = () => {
       <div>
         {data && (
           <div>
-            <Link to={RouteVar.animeDetails}>
-              <h2>{data.russian}</h2>
-            </Link>
+            <h2>{data.russian}</h2>
             <img
               src={
                 `https://shikimori.one${data.image.original}` ||
@@ -49,6 +47,9 @@ const RandomAnime: FC = () => {
               <strong>Описание:</strong>
               {data.description || "Описание отсутствует"}
             </p>
+            <Link className="animeLink" to={`/anime/${data.id}`}>
+              Побробнее
+            </Link>
           </div>
         )}
       </div>

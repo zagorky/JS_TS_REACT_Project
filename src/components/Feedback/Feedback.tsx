@@ -34,11 +34,11 @@ const Feedback = () => {
         <form ref={formRef} className={classes.form} onSubmit={handleSubmit}>
           <p>Ваше имя</p>
           <p className={classes.p}>
-            <input className={classes.input} type="text" />
+            <input className={classes.input} name="name" type="text" />
           </p>
           <p>Ваша электронная почта</p>
           <p className={classes.p}>
-            <input className={classes.input} type="text" />
+            <input className={classes.input} name="email" type="text" />
           </p>
           <p className={classes.p}>
             <p>
@@ -47,7 +47,7 @@ const Feedback = () => {
             <textarea
               className={classes.inputStory}
               id="story"
-              name="story"
+              name="question"
             ></textarea>
           </p>
           <Button>Отправить</Button>

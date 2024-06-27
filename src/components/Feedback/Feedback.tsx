@@ -4,16 +4,20 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { getQuestion } from "../../service/api/Api";
 import { Button } from "../componentList";
 import { QuestionRequest } from "../../types/types";
+import { useDispatch } from "react-redux";
+import { addQuestion } from "../../slices/questionSlice";
 
 const Feedback = () => {
   const queryClient = useQueryClient();
   const formRef = useRef<HTMLFormElement>(null);
+  const dispatch = useDispatch();
 
   const mutator = useMutation({
     mutationFn: getQuestion,
-    onSuccess: () => {
+    onSuccess: (data) => {
       formRef.current?.reset();
       queryClient.invalidateQueries({ queryKey: ["questions"] });
+      dispatch(addQuestion(data));
     },
   });
 

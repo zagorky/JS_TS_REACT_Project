@@ -1,34 +1,73 @@
-Пет проект для демонтрации знаний по JS, TS, REACT с использованием сборщика VITE
+<!-- Пет проект для демонтрации знаний по JS, TS, REACT с использованием сборщика VITE
 
-https://github.com/zagorky/JS_TS_REACT_Project.git
+https://github.com/zagorky/JS_TS_REACT_Project.git -->
 
-# React + TypeScript + Vite
+# Anime Randomizer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Project Overview
 
-Currently, two official plugins are available:
+JS_TS_REACT_Project is a web application designed to assist users in selecting a random anime and submitting questions through a feedback form. The list of animes is sourced from the Shikimori API, ensuring a diverse and extensive collection of anime options.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Features
 
-## Expanding the ESLint configuration
+- Random Anime Selector - provides users with a random anime recommendation from the Shikimori API.
+- Feedback Form - allows users to submit questions or feedback which are then sent to a local server.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+##### Frontend
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
+- HTML5
+- SASS
+- JavaScript
+- TypeScript
+- ReactJS
+  - React Query
+  - Axios
+  - clsx
+  - React Router DOM
+- Vite
+
+##### Backend
+
+- NPM
+- NodeJS
+
+##### Version Control
+
+- Git
+- GitHub
+
+##### Deploy
+
+- GH-pages
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/zagorky/JS_TS_REACT_Project.git
+cd JS_TS_REACT_Project
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Install the dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to
+   (http://localhost:3000) [http://localhost:3000]
+
+### Usage
+
+1. Navigate to the homepage.
+2. Use the random anime selector to get a recommendation.
+3. Fill out the feedback form with your questions or feedback and submit.

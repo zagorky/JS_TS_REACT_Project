@@ -1,4 +1,4 @@
-import RandomAnime from "../Random/RandomAnime";
+import { RandomAnime } from "../componentList";
 import classes from "./Main.module.scss";
 
 function Main() {

@@ -9,10 +9,11 @@ const ThemeChanger = () => {
     setTheme(event.target.value as ThemeOption);
 
   return (
-    <div>
+    <div className={classes.container}>
       <p>Тeмная тема</p>
-      <label className={classes.switch} htmlFor="darkTheme">
+      <label id="switch" className={classes.switch} htmlFor="darkTheme">
         <input
+          className={classes.slider}
           checked={theme === ThemeOption.dark}
           type="checkbox"
           name="theme"
@@ -20,20 +21,6 @@ const ThemeChanger = () => {
           value={ThemeOption.dark}
           onChange={handleChange}
         />
-        <span className={classes.slider}></span>
-      </label>
-      <p> Светлая тема</p>
-
-      <label className={classes.switch} htmlFor="lightTheme">
-        <input
-          checked={theme === ThemeOption.light}
-          type="checkbox"
-          name="theme"
-          id="lightTheme"
-          value={ThemeOption.light}
-          onChange={handleChange}
-        />
-        <span className={classes.slider}></span>
       </label>
     </div>
   );

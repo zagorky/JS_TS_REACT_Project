@@ -38,30 +38,6 @@ JS_TS_REACT_Project is a web application designed to assist users in selecting a
 
 - GH-pages
 
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/zagorky/JS_TS_REACT_Project.git
-cd JS_TS_REACT_Project
-```
-
-2. Install the dependencies:
-
-```bash
-npm install
-```
-
-3. Start the development server:
-
-```bash
-npm run dev
-```
-
-4. Open your browser and navigate to
-   (http://localhost:3000) [http://localhost:3000]
-
 ### Usage
 
 1. Navigate to the homepage.

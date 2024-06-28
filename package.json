@@ -2,7 +2,6 @@
   "name": "js-ts-react-pet-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://zagorky.github.io/JS_TS_REACT_Project/",
   "type": "module",
   "scripts": {
     "dev": "vite",

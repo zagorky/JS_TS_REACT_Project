@@ -1,0 +1,43 @@
+main {
+  background-color: #69b2d7c5;
+  margin: auto;
+  min-height: 80vh;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  font-family: "Involve Regular";
+  line-height: 2;
+}
+
+.form {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Involve Regular";
+  background-color: #a46d8863;
+  border-radius: 5px;
+  text-align: center;
+  color: #565454;
+}
+.p {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+.input {
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  min-height: 50px;
+}
+.inputStory {
+  max-width: 1200px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  min-height: 150px;
+}

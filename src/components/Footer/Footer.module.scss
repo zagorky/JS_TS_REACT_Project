@@ -1,0 +1,29 @@
+.footer {
+  background-color: #90a070;
+  font-family: "Rubik Mono One", monospace;
+  color: #e4bbc5;
+  padding: 20px 0;
+  height: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  // margin-top: auto;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.submit {
+  color: #f6c4d0;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  background-color: #90a07000;
+  cursor: pointer;
+  &:hover {
+    color: #f9e0e6;
+  }
+}

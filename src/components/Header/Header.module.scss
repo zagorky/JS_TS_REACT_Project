@@ -1,0 +1,47 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+a {
+  text-decoration: none;
+  color: #f6c4d0;
+}
+header {
+  background-color: #90a070;
+  font-family: "Rubik Mono One", monospace;
+  color: #f6c4d0;
+  padding: 20px 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+header h1 {
+  font-size: 32px;
+  &:hover {
+    transition: 1s;
+    transform: scale(1.2);
+    color: #fbe0e6;
+  }
+}
+
+$media: screen;
+$feature: -webkit-min-device-pixel-ratio;
+$value: 1.5;
+
+@media #{$media} and ($feature: $value) {
+  header h1 {
+    font-size: 24px;
+    padding: 20px 0;
+    &:hover {
+      transition: 1s;
+      transform: scale(1.1);
+      color: #fbe0e6;
+    }
+  }
+}

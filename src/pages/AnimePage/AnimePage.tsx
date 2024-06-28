@@ -7,12 +7,13 @@ import { useQuery } from "@tanstack/react-query";
 import { RouteVar } from "../../router/constants";
 import classes from "./AnimePage.module.scss";
 
-const AnimePage: FC<Anime> = () => {
+const AnimePage: FC = () => {
   const { id } = useParams<{ id: string }>();
 
   const { data, isError, isLoading, error } = useQuery<Anime, Error>({
     queryKey: ["anime", id],
     queryFn: () => getAnimeById(id as string),
+    enabled: !!id,
     refetchOnWindowFocus: false,
   });
 
@@ -28,7 +29,7 @@ const AnimePage: FC<Anime> = () => {
     return (
       <div className={classes.container}>
         <h2>Ошибка при загрузке данных</h2>
-        <p>{(error as Error).message}</p>
+        <p>{error?.message}</p>
         <Link to={RouteVar.home}>Назад на главную</Link>
       </div>
     );

@@ -6,7 +6,7 @@ export interface QuestionType {
 }
 export type QuestionRequest = Omit<QuestionType, "id">;
 export interface Anime {
-  id: string;
+  id?: string;
   russian: string;
   image: {
     original: string;

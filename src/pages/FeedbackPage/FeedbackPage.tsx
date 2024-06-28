@@ -1,4 +1,3 @@
-import React from "react";
 import { Feedback } from "../../components/componentList";
 
 const FeedbackPage = () => {

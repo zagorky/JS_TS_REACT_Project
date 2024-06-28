@@ -1,26 +1,7 @@
 import axios from "axios";
-import { QuestionRequest } from "../../types/types";
+import { Anime, QuestionRequest } from "../../types/types";
 
 const apiUrl = "https://shikimori.one/api";
-
-export interface Anime {
-  id: string;
-  russian: string;
-  image: {
-    original: string;
-  };
-  name: string;
-  genres: { name: string }[];
-  url?: string;
-  score?: string;
-  status?: string;
-  episodes?: string;
-  synonyms?: { name: string }[];
-  duration?: string;
-  screenshots?: { original: string }[];
-  videos?: { url: string }[];
-  description: string;
-}
 
 export const api = axios.create({
   baseURL: apiUrl,
